@@ -20,6 +20,9 @@ delete_project() {
 }
 
 create_project() {
+    mkdir "src"
+    cd "src"
+
     local $PROJECT_NAME="$1"
     # Create a .NET minimal API project
     echo "Creating a new .NET minimal API project called $PROJECT_NAME"
@@ -67,5 +70,15 @@ EXPOSE 80
 ENTRYPOINT ["dotnet", "$PROJECT_NAME.dll"]
 EOL
     cd ..
+
+    # Add a .gitignore file
+    echo "Creating a .gitignore file"
+    cat <<EOL > .gitignore
+bin/
+obj/
+.vscode/
+.vs/
+EOL
+
     echo "Done"
 }
