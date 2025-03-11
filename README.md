@@ -1,4 +1,4 @@
-# TestAPI Project
+# bashNetAPI Project
 
 This project is a Bash script (`generator.sh`) that can create or delete the project. The .NET API solution includes a main API project and a test project. 
 
